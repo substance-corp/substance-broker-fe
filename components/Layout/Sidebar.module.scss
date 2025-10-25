@@ -1,0 +1,114 @@
+@import '../../styles/variables.scss';
+
+.sidebar {
+  width: $sidebar-width;
+  height: 100vh;
+  background-color: $bg-sidebar;
+  border-right: 1px solid $border-color;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.logo {
+  padding: $spacing-xl $spacing-lg;
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  border-bottom: 1px solid $border-color;
+  background-color: $bg-primary;
+
+  .logoIcon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, $primary-color 0%, $primary-dark 100%);
+    border-radius: $border-radius;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $text-white;
+  }
+
+  .logoText {
+    h4 {
+      font-size: $font-size-lg;
+      font-weight: 700;
+      color: $text-primary;
+      margin: 0;
+    }
+
+    span {
+      font-size: $font-size-sm;
+      color: $text-secondary;
+    }
+  }
+}
+
+.nav {
+  padding: $spacing-lg 0;
+  flex: 1;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  padding: $spacing-md $spacing-lg;
+  color: $text-secondary;
+  font-size: $font-size-base;
+  font-weight: 500;
+  transition: all $transition-fast;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+
+  &:hover {
+    background-color: $bg-hover;
+    color: $text-primary;
+  }
+
+  &.active {
+    background-color: rgba($primary-color, 0.1);
+    color: $primary-color;
+    font-weight: 600;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background-color: $primary-color;
+      border-radius: 0 4px 4px 0;
+    }
+  }
+
+  .navIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navText {
+    flex: 1;
+  }
+}
+
+.navDivider {
+  padding: $spacing-lg $spacing-lg $spacing-sm;
+  margin-top: $spacing-lg;
+
+  span {
+    font-size: $font-size-xs;
+    font-weight: 700;
+    color: $text-light;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}
+

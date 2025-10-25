@@ -1,0 +1,312 @@
+@import './variables.scss';
+
+.dashboard {
+  max-width: 1400px;
+}
+
+.dashboardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: $spacing-2xl;
+
+  h1 {
+    font-size: $font-size-3xl;
+    font-weight: 700;
+    color: $text-primary;
+    margin-bottom: $spacing-sm;
+  }
+
+  p {
+    font-size: $font-size-base;
+    color: $text-secondary;
+    margin: 0;
+  }
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $spacing-lg;
+  margin-bottom: $spacing-2xl;
+}
+
+.statCard {
+  background-color: $bg-primary;
+  border-radius: $border-radius-lg;
+  padding: $spacing-xl;
+  box-shadow: $shadow-md;
+  display: flex;
+  gap: $spacing-lg;
+  transition: all $transition-base;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    opacity: 0.1;
+    transform: translate(30%, -30%);
+  }
+
+  &.primary::before {
+    background-color: $primary-color;
+  }
+
+  &.warning::before {
+    background-color: $warning-color;
+  }
+
+  &.success::before {
+    background-color: $success-color;
+  }
+
+  &.danger::before {
+    background-color: $danger-color;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-lg;
+  }
+}
+
+.statIcon {
+  width: 60px;
+  height: 60px;
+  border-radius: $border-radius;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-2xl;
+  color: $text-white;
+
+  .primary & {
+    background: linear-gradient(135deg, $primary-color 0%, $primary-dark 100%);
+  }
+
+  .warning & {
+    background: linear-gradient(135deg, $warning-color 0%, #d97706 100%);
+  }
+
+  .success & {
+    background: linear-gradient(135deg, $success-color 0%, #059669 100%);
+  }
+
+  .danger & {
+    background: linear-gradient(135deg, $danger-color 0%, #dc2626 100%);
+  }
+}
+
+.statContent {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+
+  h3 {
+    font-size: $font-size-sm;
+    font-weight: 600;
+    color: $text-secondary;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: $spacing-sm;
+  }
+}
+
+.statValue {
+  font-size: $font-size-3xl;
+  font-weight: 700;
+  color: $text-primary;
+  margin-bottom: $spacing-sm;
+}
+
+.statChange {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  font-size: $font-size-sm;
+  font-weight: 500;
+
+  &.up {
+    color: $success-color;
+  }
+
+  &.down {
+    color: $danger-color;
+  }
+
+  &.warning {
+    color: $warning-color;
+  }
+
+  svg {
+    font-size: $font-size-lg;
+  }
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: $spacing-lg;
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.recentActivity,
+.quickActions {
+  background-color: $bg-primary;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-md;
+  padding: $spacing-xl;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-lg;
+  padding-bottom: $spacing-lg;
+  border-bottom: 1px solid $border-color;
+
+  h3 {
+    font-size: $font-size-xl;
+    font-weight: 700;
+    color: $text-primary;
+    margin: 0;
+  }
+
+  .viewAll {
+    color: $primary-color;
+    font-size: $font-size-sm;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $primary-dark;
+    }
+  }
+}
+
+.activityList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}
+
+.activityItem {
+  display: flex;
+  gap: $spacing-md;
+  padding: $spacing-md;
+  border-radius: $border-radius;
+  transition: background-color $transition-fast;
+
+  &:hover {
+    background-color: $bg-secondary;
+  }
+}
+
+.activityIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  flex-shrink: 0;
+
+  &.primary {
+    background-color: rgba($primary-color, 0.1);
+    color: $primary-color;
+  }
+
+  &.success {
+    background-color: rgba($success-color, 0.1);
+    color: $success-color;
+  }
+
+  &.danger {
+    background-color: rgba($danger-color, 0.1);
+    color: $danger-color;
+  }
+}
+
+.activityContent {
+  flex: 1;
+
+  h4 {
+    font-size: $font-size-base;
+    font-weight: 600;
+    color: $text-primary;
+    margin-bottom: $spacing-xs;
+  }
+
+  p {
+    font-size: $font-size-sm;
+    color: $text-secondary;
+    margin-bottom: $spacing-xs;
+  }
+}
+
+.activityTime {
+  font-size: $font-size-xs;
+  color: $text-light;
+}
+
+.actionsList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.actionItem {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  padding: $spacing-md;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  text-decoration: none;
+  color: $text-primary;
+  font-weight: 500;
+  transition: all $transition-fast;
+
+  &:hover {
+    background-color: $bg-secondary;
+    border-color: $primary-color;
+    transform: translateX(4px);
+  }
+}
+
+.actionIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: $border-radius;
+  background: linear-gradient(135deg, $primary-color 0%, $primary-dark 100%);
+  color: $text-white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-xl;
+  font-weight: 600;
+}
+
+.actionArrow {
+  margin-left: auto;
+  color: $text-secondary;
+  font-size: $font-size-xl;
+  transition: transform $transition-fast;
+
+  .actionItem:hover & {
+    transform: translateX(4px);
+  }
+}
+

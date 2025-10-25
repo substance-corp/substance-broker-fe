@@ -1,0 +1,102 @@
+@import '../../styles/variables.scss';
+
+.header {
+  height: $header-height;
+  background-color: $bg-primary;
+  border-bottom: 1px solid $border-color;
+  position: sticky;
+  top: 0;
+  z-index: 90;
+}
+
+.headerContent {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 $spacing-xl;
+}
+
+.headerLeft {
+  flex: 1;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+}
+
+.notifications {
+  position: relative;
+  cursor: pointer;
+  color: $text-secondary;
+  transition: color $transition-fast;
+  padding: $spacing-sm;
+
+  &:hover {
+    color: $text-primary;
+  }
+
+  .badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: $danger-color;
+    color: $text-white;
+    font-size: $font-size-xs;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 10px;
+    min-width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.userMenu {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  cursor: pointer;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $border-radius;
+  transition: background-color $transition-fast;
+
+  &:hover {
+    background-color: $bg-secondary;
+  }
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  .userName {
+    font-size: $font-size-base;
+    font-weight: 600;
+    color: $text-primary;
+  }
+
+  .userRole {
+    font-size: $font-size-sm;
+    color: $text-secondary;
+  }
+}
+
+.userAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $primary-color 0%, $primary-dark 100%);
+  color: $text-white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: $font-size-lg;
+}
+

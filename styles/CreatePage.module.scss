@@ -1,0 +1,31 @@
+@import './variables.scss';
+
+.createPage {
+  max-width: 1000px;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  background: none;
+  border: none;
+  color: $text-secondary;
+  font-size: $font-size-base;
+  font-weight: 500;
+  cursor: pointer;
+  padding: $spacing-sm $spacing-md;
+  margin-bottom: $spacing-xl;
+  border-radius: $border-radius;
+  transition: all $transition-fast;
+
+  &:hover {
+    background-color: $bg-secondary;
+    color: $text-primary;
+  }
+
+  svg {
+    font-size: $font-size-xl;
+  }
+}
+

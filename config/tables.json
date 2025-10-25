@@ -1,0 +1,160 @@
+{
+  "users": {
+    "title": "User Management",
+    "subtitle": "Manage all users in the system",
+    "columns": [
+      {
+        "key": "id",
+        "label": "ID",
+        "sortable": true,
+        "width": "80px"
+      },
+      {
+        "key": "name",
+        "label": "Name",
+        "sortable": true,
+        "type": "user"
+      },
+      {
+        "key": "email",
+        "label": "Email",
+        "sortable": true
+      },
+      {
+        "key": "role",
+        "label": "Role",
+        "sortable": true,
+        "type": "badge"
+      },
+      {
+        "key": "status",
+        "label": "Status",
+        "sortable": true,
+        "type": "status"
+      },
+      {
+        "key": "createdAt",
+        "label": "Created At",
+        "sortable": true,
+        "type": "date"
+      },
+      {
+        "key": "actions",
+        "label": "Actions",
+        "type": "actions",
+        "width": "150px"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Edit",
+        "icon": "MdEdit",
+        "variant": "primary"
+      },
+      {
+        "label": "Delete",
+        "icon": "MdDelete",
+        "variant": "danger"
+      }
+    ],
+    "headerActions": [
+      {
+        "label": "Create User",
+        "icon": "MdAdd",
+        "variant": "primary",
+        "path": "/users/create"
+      }
+    ],
+    "filters": [
+      {
+        "name": "role",
+        "label": "Role",
+        "type": "select",
+        "options": [
+          { "value": "", "label": "All Roles" },
+          { "value": "admin", "label": "Admin" },
+          { "value": "manager", "label": "Manager" },
+          { "value": "editor", "label": "Editor" },
+          { "value": "viewer", "label": "Viewer" }
+        ]
+      },
+      {
+        "name": "status",
+        "label": "Status",
+        "type": "select",
+        "options": [
+          { "value": "", "label": "All Status" },
+          { "value": "active", "label": "Active" },
+          { "value": "inactive", "label": "Inactive" }
+        ]
+      }
+    ],
+    "searchPlaceholder": "Search users..."
+  },
+  "roles": {
+    "title": "Role Management",
+    "subtitle": "Configure role permissions and access controls",
+    "columns": [
+      {
+        "key": "id",
+        "label": "ID",
+        "sortable": true,
+        "width": "80px"
+      },
+      {
+        "key": "name",
+        "label": "Role Name",
+        "sortable": true
+      },
+      {
+        "key": "description",
+        "label": "Description",
+        "sortable": false
+      },
+      {
+        "key": "permissions",
+        "label": "Permissions",
+        "type": "count"
+      },
+      {
+        "key": "users",
+        "label": "Users",
+        "type": "count"
+      },
+      {
+        "key": "createdAt",
+        "label": "Created At",
+        "sortable": true,
+        "type": "date"
+      },
+      {
+        "key": "actions",
+        "label": "Actions",
+        "type": "actions",
+        "width": "150px"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Edit",
+        "icon": "MdEdit",
+        "variant": "primary"
+      },
+      {
+        "label": "Delete",
+        "icon": "MdDelete",
+        "variant": "danger"
+      }
+    ],
+    "headerActions": [
+      {
+        "label": "Create Role",
+        "icon": "MdAdd",
+        "variant": "primary",
+        "path": "/roles/create"
+      }
+    ],
+    "searchPlaceholder": "Search roles..."
+  }
+}
+

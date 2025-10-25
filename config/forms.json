@@ -1,0 +1,211 @@
+{
+  "createRole": {
+    "title": "Create New Role",
+    "subtitle": "Define role permissions and module access",
+    "fields": [
+      {
+        "name": "roleName",
+        "label": "Role Name",
+        "type": "text",
+        "placeholder": "Enter role name (e.g., Admin, Manager, Editor)",
+        "required": true,
+        "validation": {
+          "minLength": 3,
+          "maxLength": 50
+        }
+      }
+    ],
+    "permissionsSection": {
+      "title": "Module Permissions",
+      "subtitle": "Select the permissions for each module",
+      "modules": [
+        {
+          "id": "dashboard",
+          "name": "Dashboard",
+          "icon": "MdDashboard",
+          "permissions": ["View", "Add", "Edit", "Delete", "Approve"]
+        },
+        {
+          "id": "user-management",
+          "name": "User Management",
+          "icon": "MdPeople",
+          "permissions": ["View", "Add", "Edit", "Delete", "Approve"]
+        },
+        {
+          "id": "roles-permissions",
+          "name": "Roles & Permissions",
+          "icon": "MdSecurity",
+          "permissions": ["View", "Add", "Edit", "Delete", "Approve"]
+        },
+        {
+          "id": "settings",
+          "name": "Settings",
+          "icon": "MdSettings",
+          "permissions": ["View", "Add", "Edit", "Delete", "Approve"]
+        },
+        {
+          "id": "analytics",
+          "name": "Analytics",
+          "icon": "MdBarChart",
+          "permissions": ["View", "Add", "Edit", "Delete", "Approve"]
+        }
+      ]
+    },
+    "buttons": [
+      {
+        "label": "Cancel",
+        "type": "button",
+        "variant": "outline-secondary"
+      },
+      {
+        "label": "Save Role",
+        "type": "submit",
+        "variant": "primary"
+      }
+    ]
+  },
+  "createUser": {
+    "title": "Create New User",
+    "subtitle": "Add a new user to the system",
+    "fields": [
+      {
+        "name": "firstName",
+        "label": "First Name",
+        "type": "text",
+        "placeholder": "Enter first name",
+        "required": true,
+        "col": 6
+      },
+      {
+        "name": "lastName",
+        "label": "Last Name",
+        "type": "text",
+        "placeholder": "Enter last name",
+        "required": true,
+        "col": 6
+      },
+      {
+        "name": "email",
+        "label": "Email Address",
+        "type": "email",
+        "placeholder": "Enter email address",
+        "required": true,
+        "col": 12
+      },
+      {
+        "name": "role",
+        "label": "Role",
+        "type": "select",
+        "placeholder": "Select role",
+        "required": true,
+        "col": 6,
+        "options": [
+          { "value": "admin", "label": "Admin" },
+          { "value": "manager", "label": "Manager" },
+          { "value": "editor", "label": "Editor" },
+          { "value": "viewer", "label": "Viewer" }
+        ]
+      },
+      {
+        "name": "status",
+        "label": "Status",
+        "type": "select",
+        "placeholder": "Select status",
+        "required": true,
+        "col": 6,
+        "options": [
+          { "value": "active", "label": "Active" },
+          { "value": "inactive", "label": "Inactive" }
+        ]
+      },
+      {
+        "name": "password",
+        "label": "Password",
+        "type": "password",
+        "placeholder": "Enter password",
+        "required": true,
+        "col": 6
+      },
+      {
+        "name": "confirmPassword",
+        "label": "Confirm Password",
+        "type": "password",
+        "placeholder": "Confirm password",
+        "required": true,
+        "col": 6
+      }
+    ],
+    "buttons": [
+      {
+        "label": "Cancel",
+        "type": "button",
+        "variant": "outline-secondary"
+      },
+      {
+        "label": "Create User",
+        "type": "submit",
+        "variant": "primary"
+      }
+    ]
+  },
+  "login": {
+    "title": "Sign In",
+    "subtitle": "Enter your credentials to access your account",
+    "fields": [
+      {
+        "name": "email",
+        "label": "Email Address",
+        "type": "email",
+        "placeholder": "Enter your email",
+        "icon": "MdEmail",
+        "required": true
+      },
+      {
+        "name": "password",
+        "label": "Password",
+        "type": "password",
+        "placeholder": "Enter your password",
+        "icon": "MdLock",
+        "required": true
+      },
+      {
+        "name": "rememberMe",
+        "label": "Remember me",
+        "type": "checkbox"
+      }
+    ],
+    "buttons": [
+      {
+        "label": "Sign In",
+        "type": "submit",
+        "variant": "primary",
+        "fullWidth": true
+      }
+    ],
+    "footer": {
+      "forgotPassword": {
+        "text": "Forgot password?",
+        "link": "/forgot-password"
+      },
+      "socialLogin": {
+        "text": "Or continue with",
+        "providers": [
+          {
+            "name": "Google",
+            "icon": "FcGoogle"
+          },
+          {
+            "name": "Microsoft",
+            "icon": "SiMicrosoft"
+          }
+        ]
+      },
+      "signup": {
+        "text": "Don't have an account?",
+        "linkText": "Sign up for free",
+        "link": "/signup"
+      }
+    }
+  }
+}
+

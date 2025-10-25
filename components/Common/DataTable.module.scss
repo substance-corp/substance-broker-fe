@@ -1,0 +1,191 @@
+@import '../../styles/variables.scss';
+
+.tableContainer {
+  background-color: $bg-primary;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-md;
+  overflow: hidden;
+}
+
+.tableHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: $spacing-xl;
+  border-bottom: 1px solid $border-color;
+}
+
+.tableInfo {
+  h2 {
+    font-size: $font-size-2xl;
+    font-weight: 700;
+    color: $text-primary;
+    margin-bottom: $spacing-sm;
+  }
+
+  p {
+    font-size: $font-size-base;
+    color: $text-secondary;
+    margin: 0;
+  }
+}
+
+.tableActions {
+  display: flex;
+  gap: $spacing-md;
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+  }
+}
+
+.tableFilters {
+  display: flex;
+  gap: $spacing-md;
+  padding: $spacing-lg $spacing-xl;
+  border-bottom: 1px solid $border-color;
+  background-color: $bg-secondary;
+}
+
+.searchBox {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  svg {
+    position: absolute;
+    left: $spacing-md;
+    color: $text-secondary;
+  }
+
+  input {
+    width: 100%;
+    padding: $spacing-sm $spacing-md $spacing-sm 45px;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    font-size: $font-size-base;
+    transition: all $transition-fast;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+      box-shadow: 0 0 0 0.2rem rgba($primary-color, 0.25);
+    }
+  }
+}
+
+.tableWrapper {
+  overflow-x: auto;
+
+  table {
+    margin: 0;
+    width: 100%;
+
+    thead {
+      background-color: $bg-secondary;
+
+      th {
+        font-size: $font-size-sm;
+        font-weight: 600;
+        color: $text-secondary;
+        text-transform: uppercase;
+        padding: $spacing-md $spacing-lg;
+        white-space: nowrap;
+
+        svg {
+          margin-left: $spacing-xs;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid $border-light;
+        transition: background-color $transition-fast;
+
+        &:hover {
+          background-color: $bg-secondary;
+        }
+      }
+
+      td {
+        padding: $spacing-md $spacing-lg;
+        color: $text-primary;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.userCell {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+}
+
+.userAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $primary-color 0%, $primary-dark 100%);
+  color: $text-white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: $font-size-sm;
+}
+
+.userInfo {
+  .userName {
+    font-weight: 500;
+    color: $text-primary;
+  }
+}
+
+.badge {
+  font-weight: 500;
+  padding: 4px 12px;
+  text-transform: capitalize;
+}
+
+.count {
+  font-weight: 600;
+  color: $primary-color;
+}
+
+.actions {
+  display: flex;
+  gap: $spacing-sm;
+
+  button {
+    padding: 4px 8px;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-lg $spacing-xl;
+  border-top: 1px solid $border-color;
+}
+
+.paginationInfo {
+  font-size: $font-size-sm;
+  color: $text-secondary;
+}
+
+.paginationButtons {
+  display: flex;
+  gap: $spacing-sm;
+
+  button {
+    min-width: 40px;
+  }
+}
+

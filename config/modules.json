@@ -1,0 +1,55 @@
+{
+  "modules": [
+    {
+      "id": "dashboard",
+      "name": "Dashboard",
+      "icon": "MdDashboard",
+      "path": "/dashboard",
+      "section": "main"
+    },
+    {
+      "id": "roles",
+      "name": "Roles & Permissions",
+      "icon": "MdSecurity",
+      "path": "/roles",
+      "section": "main",
+      "active": true
+    },
+    {
+      "id": "users",
+      "name": "Users",
+      "icon": "MdPeople",
+      "path": "/users",
+      "section": "main"
+    },
+    {
+      "id": "settings",
+      "name": "Settings",
+      "icon": "MdSettings",
+      "path": "/settings",
+      "section": "main"
+    },
+    {
+      "id": "analytics",
+      "name": "Analytics",
+      "icon": "MdBarChart",
+      "path": "/analytics",
+      "section": "main"
+    },
+    {
+      "id": "user-management",
+      "name": "User Management",
+      "icon": "MdManageAccounts",
+      "path": "/admin/user-management",
+      "section": "admin"
+    },
+    {
+      "id": "admin-settings",
+      "name": "Settings",
+      "icon": "MdSettings",
+      "path": "/admin/settings",
+      "section": "admin"
+    }
+  ]
+}
+

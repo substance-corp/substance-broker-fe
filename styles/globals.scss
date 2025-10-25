@@ -1,0 +1,85 @@
+@import './variables.scss';
+@import '~bootstrap/scss/bootstrap';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: $font-family;
+  background-color: $bg-secondary;
+  color: $text-primary;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+// Custom Scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $bg-secondary;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $secondary-color;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $text-secondary;
+}
+
+// Utility Classes
+.text-truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.transition-all {
+  transition: all $transition-base;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+// Custom Bootstrap Overrides
+.btn-primary {
+  background-color: $primary-color;
+  border-color: $primary-color;
+  
+  &:hover {
+    background-color: $primary-dark;
+    border-color: $primary-dark;
+  }
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: $primary-color;
+  box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.25);
+}
+
+.card {
+  border: none;
+  box-shadow: $shadow-sm;
+  transition: all $transition-base;
+  
+  &:hover {
+    box-shadow: $shadow-md;
+  }
+}
+
