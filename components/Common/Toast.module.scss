@@ -1,0 +1,85 @@
+@import '../../styles/variables.scss';
+
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  min-width: 300px;
+  max-width: 500px;
+  padding: $spacing-md $spacing-lg;
+  background-color: $bg-primary;
+  border-radius: $border-radius;
+  box-shadow: $shadow-lg;
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  z-index: 9999;
+  animation: slideIn 0.3s ease-out;
+
+  &.success {
+    border-left: 4px solid $success-color;
+  }
+
+  &.error {
+    border-left: 4px solid $danger-color;
+  }
+
+  &.info {
+    border-left: 4px solid $info-color;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.icon {
+  font-size: $font-size-xl;
+  flex-shrink: 0;
+
+  .success & {
+    color: $success-color;
+  }
+
+  .error & {
+    color: $danger-color;
+  }
+
+  .info & {
+    color: $info-color;
+  }
+}
+
+.message {
+  flex: 1;
+  font-size: $font-size-base;
+  color: $text-primary;
+  font-weight: 500;
+}
+
+.close {
+  background: none;
+  border: none;
+  font-size: $font-size-2xl;
+  color: $text-secondary;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $text-primary;
+  }
+}
+
